@@ -52,8 +52,13 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
+<<<<<<< HEAD
 gem 'click_send', '3.1.0', path: 'vendor/gems'
 
 group :test do
   gem 'database_cleaner'
 end
+=======
+# gem 'click_send', '3.1.0', path: 'vendor/gems'
+gem 'click_send', git: "https://github.com/getshiny/click_send"
+>>>>>>> master
