@@ -53,3 +53,7 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'click_send', '3.1.0', path: 'vendor/gems'
+
+group :test do
+  gem 'database_cleaner'
+end

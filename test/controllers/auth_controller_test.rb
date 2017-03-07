@@ -1,16 +1,32 @@
 require 'test_helper'
+require 'helpers/auth_helper'
+
 
 class AuthControllerTest < ActionDispatch::IntegrationTest
+  include AuthHelper
 
-  test "request code" do
-    # post auth_code_url with a phone number
-    # assert_response :success
-    # assert response has a the phone number
+  setup do
+    @new = { phoneNumber: "7111111111" }
+    @existing = { phoneNumber: users(:one).phoneNumber }
   end
 
-  test "request token" do
-    # post auth_token_url with a phone number and a code
-    # assert_response :success
-    # assert_response has a jwt token
+  # test "New user authentication" do
+  #   assert_difference('User.count') do
+  #     request_code @new
+  #   end
+  # end
+
+  test "Login form view" do
+    login_form
   end
+
+  test "Existing user authentication" do
+    request_code @existing
+  end
+  #
+  # test "request token" do
+  #   # post auth_token_url with a phone number and a code
+  #   # assert_response :success
+  #   # assert_response has a jwt token
+  # end
 end
